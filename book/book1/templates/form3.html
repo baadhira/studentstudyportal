@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="{% static 'css/a.css' %}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+<h1>FORM </h1>
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+<div class="form-group">
+      <label >TITLE:</label>
+      <input type="text" class="form-control" placeholder="Enter title" name="title">
+    </div>
+   <div class="form-group">
+      <label >AUTHOR:</label>
+      <input type="text" class="form-control" placeholder="Enter Author" name="author">
+    </div>
+     <div class="form-group">
+      <label >YEAR:</label>
+      <input type="text" class="form-control" placeholder="Enter year" name="year">
+    </div>
+     <div class="form-group">
+      <label >PUBLISHER:</label>
+      <input type="text" class="form-control" placeholder="Enter publisher" name="publisher">
+    </div>
+     <div class="form-group">
+      <label >DESCRIPTION:</label>
+      <input type="text" class="form-control" placeholder="Enter description" name="desc">
+    </div>
+    <div class="form-group">
+      <label >BOOK COVER:</label>
+      <input type="file" class="form-control" placeholder="book cover" name="cover">
+    </div>
+    <div class="form-group">
+      <label >UPLOAD BOOK:</label>
+      <input type="file" class="form-control" placeholder="book file" name="pdf">
+    </div>
+
+    <button type="submit" class="btn btn-default">Add Book</button>
+
+    </form></div>
+</body>
+</html></html>

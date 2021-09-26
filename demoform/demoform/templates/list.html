@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="{% static 'css/a.css' %}">
+</head>
+<body><div class="container-fluid">
+<h1>STUDENT DETAILS</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+
+    {% for i in s %}
+    <tr>
+        <td>{{i.name}}</td>
+        <th>{{i.age}}</th>
+    </tr>
+    {% endfor %}
+    </table>
+
+</table>
+
+<ol>
+    {% for i in s %}
+    <li>STUDENT INFO</li>
+<ul>
+    <li>Name:{{i.name}}</li>
+    <li>Age:{{i.age}}</li>
+</ul>
+    {% endfor %}
+</ol>
+</div>
+</body>
+</html>

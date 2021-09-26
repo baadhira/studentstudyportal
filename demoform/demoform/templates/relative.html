@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="{% static 'css/a.css' %}">
+</head>
+<body>
+<div class="container-fluid">
+<br>
+<a href="{% url 'home' %}" class="btn btn-danger">LINK TO HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{% url 'index' %}" class="btn btn-danger">LINK TO INDEX</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+ &nbsp;&nbsp;
+<a href="{% url 'form1' %}" class="btn btn-danger">ADD DETAILS</a>&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+</body>
+</html>

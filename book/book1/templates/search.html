@@ -1,0 +1,65 @@
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="{% static 'css/a.css' %}">
+</head>
+
+<div class="container">
+<h1> Search Book Details</h1>
+<form method="POST" action="">
+{% csrf_token %}
+<div class="form-group">
+<div class="col-lg-5">
+<input type="text" name="srh" class="form-control" placeholder="Enter name">
+</div>
+<label class="col-lg-2">
+<button type="submit" class="btn btn-danger">Search</button>
+</label>
+</div>
+</form>
+</div>
+<div>
+{% if messages %}
+
+<ul class="messages">
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+</div>
+{% if sr %}
+<h1>BOOK DETAILS</h1>
+<table class="table table-bordered" >
+    <tr>
+        <th>Cover</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Pdf</th>
+
+    </tr>
+
+    {% for i in sr %}
+    <tr>
+        {% if i.cover %}
+        <td><img src="{{i.cover.url}}" weight="100px" height="100px"></td>
+        {% else %}
+        <td>NO COVER</td>
+        {% endif %}
+
+        <td>{{i.title}}</td>
+        <td>{{i.author}}</td>
+           {% if i.pdf %}
+        <td><img src="{{i.pdf.url}}" weight="100px" height="100px" download class="btn btn-outline-success" >DOWNLOAD PDF</td>
+        {% else %}
+        <td>NO PDF</td>
+        {% endif %}
+
+
+
+    </tr>
+    {% endfor %}
+    </table>
+{% endif %}

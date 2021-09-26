@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="{% static 'css/a.css' %}">
+</head>
+<body>
+<div class="container-fluid">
+<br>
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;
+<a href="{% url 'library:form3' %}" class="btn btn-danger">ADD DETAILS</a>&nbsp;&nbsp;&nbsp;&nbsp;
+ <a href="{% url 'library:list' %}" class="btn btn-danger">VIEW DETAILS</a>
+ <a href="{% url 'library:search' %}" class="btn btn-danger">SEARCH BOOK</a>
+</div>
+</body>
+</html>

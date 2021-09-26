@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="{% static 'css/a.css' %}">
+</head>
+<body><div class="container-fluid">
+<h1>STUDENT DETAILS</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>TITLE</th>
+        <th>AUTHOR</th>
+        <th>YEAR</th>
+        <th>PUBLISHER</th>
+        <th>COVER</th>
+        <th>BOOK PDF</th>
+
+    </tr>
+
+    {% for i in s %}
+    <tr>
+        <td>{{i.title}}</td>
+        <td>{{i.author}}</td>
+         <td>{{i.year}}</td>
+        <td>{{i.publisher}}</td>
+         {% if i.cover %}
+        <td><img src="{{i.cover.url}}" weight="100px" height="100px"></td>
+        {% else %}
+        <td>NO COVER</td>
+        {% endif %}
+         {% if i.pdf %}
+        <td><img src="{{i.pdf.url}}" weight="100px" height="100px" download class="btn btn-outline-success" >DOWNLOAD PDF</td>
+        {% else %}
+        <td>NO PDF</td>
+        {% endif %}
+
+
+
+    </tr>
+    {% endfor %}
+    </table>
+
+</table>
+
+
+</div>
+</body>
+</html>
